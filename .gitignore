@@ -144,6 +144,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Output of virtualenv
+output/
+
 # Spyder project settings
 .spyderproject
 .spyproject

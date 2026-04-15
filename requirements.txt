@@ -1,0 +1,36 @@
+# Core
+anthropic>=0.20.0
+pydantic>=2.0
+pyyaml>=6.0
+click>=8.0
+rich>=13.0
+networkx>=3.0
+
+# Audio / Video
+ffmpeg-python>=0.2.0
+moviepy>=1.0.3
+
+# Dataset pipeline
+yt-dlp>=2024.1.0
+openai-whisper>=20231117
+scenedetect[opencv]>=0.6
+
+# Visualization
+# manim>=0.18  # Install separately: pip install manim
+
+# TTS
+# kokoro>=0.1  # Install separately for voice generation
+
+# ML (install separately for GPU training)
+# torch>=2.0
+# diffusers>=0.25
+# accelerate>=0.25
+# transformers>=4.35
+# peft>=0.8
+# huggingface-hub>=0.20
+
+# Utilities
+tqdm>=4.60
+numpy>=1.24
+Pillow>=10.0
+requests>=2.31
