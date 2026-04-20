@@ -1,0 +1,30 @@
+# TeachDiffusion Inference Configuration
+
+model:
+  name: "wan2.2"
+  pretrained_path: "Wan-AI/Wan2.2-T2V-14B"
+  lora_path: "TeachDiffusion/teachdiffusion-v0.1"
+  dtype: "bfloat16"
+  device: "cuda"  # or "cpu" for stub mode
+
+generation:
+  num_frames: 16
+  fps: 8
+  resolution: 480
+  num_inference_steps: 50
+  guidance_scale: 7.5
+  seed: null  # null = random
+
+persona:
+  name: "Professor Aria"
+  appearance: "A warm, confident teacher with short dark hair, standing in front of a clean whiteboard"
+  voice: "clear, patient, encouraging"
+
+output:
+  output_dir: "./outputs/generated"
+  format: "mp4"
+  include_manim_overlay: true
+  include_voice: true
+
+# Stub mode for development without GPU
+stub_mode: true

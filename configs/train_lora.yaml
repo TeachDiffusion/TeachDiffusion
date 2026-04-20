@@ -1,0 +1,57 @@
+# TeachDiffusion LoRA Fine-tuning Configuration
+# Target: Wan 2.2 base model
+
+model:
+  name: "wan2.2"
+  pretrained_path: "Wan-AI/Wan2.2-T2V-14B"
+  dtype: "bfloat16"
+
+lora:
+  rank: 64
+  alpha: 64
+  dropout: 0.05
+  target_modules:
+    - "to_q"
+    - "to_k"
+    - "to_v"
+    - "to_out.0"
+    - "ff.net.0.proj"
+    - "ff.net.2"
+
+training:
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  lr_scheduler: "cosine"
+  lr_warmup_steps: 100
+  max_train_steps: 5000
+  save_steps: 500
+  eval_steps: 250
+  logging_steps: 10
+  mixed_precision: "bf16"
+  gradient_checkpointing: true
+  max_grad_norm: 1.0
+  seed: 42
+
+data:
+  dataset_path: "./data/processed"
+  manifest_file: "manifest.json"
+  resolution: 480
+  num_frames: 16
+  fps: 8
+  caption_column: "caption"
+  video_column: "video_path"
+
+output:
+  output_dir: "./outputs/training"
+  logging_dir: "./outputs/logs"
+  hub_model_id: "TeachDiffusion/teachdiffusion-v0.1"
+  push_to_hub: false
+
+pedagogy_conditioning:
+  enabled: true
+  step_type_embedding: true
+  gesture_embedding: true
+  pacing_embedding: true
+  persona_token: "<teach>"
