@@ -1,0 +1,72 @@
+{
+  "version": "0.1.0",
+  "description": "Seed data for the TeachDiffusion knowledge base — math concept taxonomy",
+  "domains": {
+    "arithmetic": {
+      "name": "Arithmetic",
+      "description": "Fundamental number operations",
+      "topics": ["arithmetic_basics", "fractions", "decimals", "percentages", "exponents", "square_roots"]
+    },
+    "algebra": {
+      "name": "Algebra",
+      "description": "Manipulating symbols and solving equations",
+      "topics": ["variables_expressions", "linear_equations", "inequalities", "systems_of_equations", "factoring", "quadratic_equations", "discriminant", "polynomials", "complex_numbers", "functions", "function_transformations", "logarithms"]
+    },
+    "geometry": {
+      "name": "Geometry",
+      "description": "Shapes, space, and spatial reasoning",
+      "topics": ["basic_geometry", "coordinate_geometry", "pythagorean_theorem"]
+    },
+    "trigonometry": {
+      "name": "Trigonometry",
+      "description": "Relationships between angles and sides of triangles",
+      "topics": ["trigonometric_ratios", "unit_circle", "trig_identities"]
+    },
+    "calculus": {
+      "name": "Calculus",
+      "description": "Change, accumulation, and continuity",
+      "topics": ["limits", "derivatives", "chain_rule", "integrals", "fundamental_theorem"]
+    },
+    "linear_algebra": {
+      "name": "Linear Algebra",
+      "description": "Vectors, matrices, and linear transformations",
+      "topics": ["vectors", "matrices", "determinants", "eigenvalues"]
+    },
+    "probability": {
+      "name": "Probability",
+      "description": "Uncertainty and likelihood",
+      "topics": ["basic_probability", "combinations_permutations"]
+    }
+  },
+  "learning_paths": {
+    "algebra_to_calculus": {
+      "name": "Algebra to Calculus",
+      "description": "The standard path from basic algebra to calculus",
+      "sequence": [
+        "arithmetic_basics", "fractions", "exponents", "square_roots",
+        "variables_expressions", "linear_equations", "factoring",
+        "quadratic_equations", "functions", "polynomials",
+        "limits", "derivatives", "integrals", "fundamental_theorem"
+      ]
+    },
+    "algebra_to_linear_algebra": {
+      "name": "Algebra to Linear Algebra",
+      "description": "Path from algebra through linear algebra",
+      "sequence": [
+        "arithmetic_basics", "variables_expressions", "linear_equations",
+        "systems_of_equations", "basic_geometry", "coordinate_geometry",
+        "vectors", "matrices", "determinants", "eigenvalues"
+      ]
+    },
+    "geometry_to_trig": {
+      "name": "Geometry to Trigonometry",
+      "description": "Path from geometry through trigonometry",
+      "sequence": [
+        "arithmetic_basics", "fractions", "basic_geometry",
+        "square_roots", "pythagorean_theorem",
+        "coordinate_geometry", "trigonometric_ratios",
+        "unit_circle", "trig_identities"
+      ]
+    }
+  }
+}
